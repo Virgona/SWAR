@@ -1,8 +1,12 @@
 const { Schema, model } = require('mongoose');
 
-const assetSchema = new Schema ({
+const assetSchema = new Schema({
     _id: {
 
+    },
+    cctv: {
+        type: String,
+        trim: true
     },
     number: {
         type: String,
@@ -22,7 +26,7 @@ const assetSchema = new Schema ({
         required: true,
         trim: true
     },
-    location: {
+    address: {
         type: String,
         required: true,
         trim: true
@@ -32,18 +36,6 @@ const assetSchema = new Schema ({
         required: true,
         trim: true
     },
-    priority: {
-        type: String,
-        required: true,
-        trim: true
-    },
-    status: {
-        type: String,
-        required: true,
-        trim: true
-    },
-    
-
 })
 
 const Asset = model('Asset', assetSchema);
